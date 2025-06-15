@@ -193,7 +193,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-lg opacity-50 animate-pulse"></div>
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-pink-100 to-purple-100">
                 <Image
-                  src="/public/IMG_6402.JPG"
+                  src="/public/IMG_6402.jpg"
                   alt="Profile"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                   fill
