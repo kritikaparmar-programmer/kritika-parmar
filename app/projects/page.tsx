@@ -1,10 +1,17 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink } from "lucide-react"
+import { Github, ExternalLink, Menu, X } from "lucide-react"
+import Link from "next/link"
 
 export default function ProjectsPage() {
+  // Add this at the top of the component function, before the projects array
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   // Sample projects data
   const projects = [
     {
@@ -65,10 +72,82 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header Banner */}
-      <div className="w-full bg-gradient-to-r from-pink-500 to-purple-600 py-12 md:py-24">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      {/* Navigation */}
+      <nav className="w-full py-6 px-4 relative bg-gradient-to-r from-pink-500 to-purple-600">
+        <div className="max-w-4xl mx-auto">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex justify-between items-center mb-8">
+            <Link href="/" className="text-2xl font-bold text-white hover:text-pink-200 transition-colors">
+              Your Name
+            </Link>
+            <div className="flex items-center space-x-8 text-sm font-medium">
+              <Link href="/blog" className="text-white/90 hover:text-white transition-colors">
+                Blog
+              </Link>
+              <Link href="/projects" className="text-white font-semibold">
+                Projects
+              </Link>
+              <Link href="/about" className="text-white/90 hover:text-white transition-colors">
+                About
+              </Link>
+              <Link href="/contact" className="text-white/90 hover:text-white transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex justify-between items-center mb-8">
+            <Link href="/" className="text-xl font-bold text-white hover:text-pink-200 transition-colors">
+              Your Name ✨
+            </Link>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-pink-100 shadow-lg">
+              <div className="px-4 py-6 space-y-4">
+                <Link
+                  href="/blog"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog 📝
+                </Link>
+                <Link
+                  href="/projects"
+                  className="block text-pink-500 font-semibold py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Projects 🚀
+                </Link>
+                <Link
+                  href="/about"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About 💖
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact 📧
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {/* Header Content */}
+          <div className="flex flex-col items-center justify-center space-y-4 text-center py-12 md:py-16">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl">My Projects</h1>
               <p className="max-w-[700px] text-white/90 md:text-xl/relaxed">
@@ -77,7 +156,7 @@ export default function ProjectsPage() {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Projects Grid */}
       <div className="flex-1 w-full py-12 md:py-24">

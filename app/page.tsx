@@ -1,47 +1,112 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Heart, Sparkles, Coffee, Code, BookOpen, Mail, Github, Twitter, Linkedin } from "lucide-react"
+import { Heart, Sparkles, Coffee, Code, BookOpen, Mail, Github, Twitter, Linkedin, Menu, X } from "lucide-react"
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
       {/* Navigation */}
-      <nav className="w-full py-6 px-4">
-        <div className="max-w-4xl mx-auto flex justify-center">
-          <div className="flex items-center space-x-8 text-sm font-medium">
-            <Link
-              href="/blog"
-              className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/projects"
-              className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
-            >
-              About
-            </Link>
-            <Link
-              href="/resources"
-              className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
-            >
-              Resources
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
-            >
-              Contact
-            </Link>
+      <nav className="w-full py-6 px-4 relative">
+        <div className="max-w-4xl mx-auto">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex justify-center">
+            <div className="flex items-center space-x-8 text-sm font-medium">
+              <Link
+                href="/blog"
+                className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/projects"
+                className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
+              >
+                Projects
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
+              >
+                About
+              </Link>
+              <Link
+                href="/resources"
+                className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
+              >
+                Resources
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-pink-500 transition-colors duration-200 hover:scale-105 transform"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex justify-between items-center">
+            <Link href="/" className="text-xl font-bold text-gray-800 hover:text-pink-500 transition-colors">
+              Your Name ✨
+            </Link>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-full bg-pink-100 hover:bg-pink-200 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5 text-pink-600" /> : <Menu className="h-5 w-5 text-pink-600" />}
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-pink-100 shadow-lg">
+              <div className="px-4 py-6 space-y-4">
+                <Link
+                  href="/blog"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog 📝
+                </Link>
+                <Link
+                  href="/projects"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Projects 🚀
+                </Link>
+                <Link
+                  href="/about"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About 💖
+                </Link>
+                <Link
+                  href="/resources"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Resources 📚
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block text-gray-700 hover:text-pink-500 transition-colors py-2 text-center hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact 📧
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
