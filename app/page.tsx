@@ -134,105 +134,44 @@ export default function Home() {
             <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-pink-100 hover:shadow-xl transition-all duration-300">
               <p className="text-gray-700 leading-relaxed mb-4">
                 {
-                  "Hi there! 👋 I'm a deep learning engineer who loves turning complex algorithms into real-world magic. ✨ I grew up fascinated by how computers could learn and think, and now I get to build AI systems that make a difference!"
+                  "Heyaa! I'm Kritika, a Machine Learning Engineer and singer. I grew up fascinated by how computers could learn and think, and now I get to build AI systems that make a difference!"
                 }
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-4">
                 {
-                  "My focus is on computer vision and NLP systems in production. I'm currently exploring creative applications of AI in healthcare and education. 🏥📚"
+                  "My focus is on computer vision and NLP systems in production. I'm currently exploring creative applications of AI in automobile and fashion industry."
                 }
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                {"Previously, I worked on ML infrastructure at "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  TechCorp
-                </Link>
-                {", developed recommendation systems at "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  StartupXYZ
-                </Link>
-                {
-                  ", and contributed to open-source ML tools. I also founded a small AI consultancy helping startups integrate ML into their products. 🚀"
+                {"I'm currently working at Cars24 where I work on implementing AI in automobile damage detection problems. Previously, I worked at startups which include FilterPixel, Akridata and Prodigal AI and contributed to ML, majorly in Computer Vision space."
                 }
               </p>
+          
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                {
-                  "Building in the AI space taught me that being a founder is incredibly challenging, so I try to support other founders whenever I can. Some projects I've mentored include healthcare AI startups and educational tech companies. 💪"
-                }
+                
+                {"I frequently speak at conferences/events and occasionally host "}
+                <Link
+                  href="https://www.linkedin.com/in/kritika-parmar-10244a193/"
+                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
+                >
+                  events
+                </Link>
+                {"."}
               </p>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {"I graduated from University where I studied "}
+                <p className="text-gray-700 leading-relaxed mb-4">
+                
+                {"I also post "}
                 <Link
-                  href="#"
+                  href="https://www.youtube.com/@kritikaparmarr"
                   className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
                 >
-                  Computer Science & AI
+                  singing
                 </Link>
-                {
-                  ". My thesis on neural architecture search became the foundation for several research papers and open-source tools. 📄"
-                }
-              </p>
-
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {"My latest project is a "}
-                <span className="font-semibold text-pink-600">Deep Learning Handbook</span>
-                {" (2025) which is currently trending on "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  GitHub
-                </Link>
-                {". It's also available on "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  Amazon
-                </Link>
-                {" and has been featured in several AI newsletters! 🎉"}
-              </p>
-
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {"I'm active on "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  GitHub
-                </Link>
-                {" and aspire to become a "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  Kaggle
-                </Link>
-                {" Grandmaster. You can also find me on "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  Twitter
-                </Link>
-                {". I frequently speak at conferences and occasionally host "}
-                <Link
-                  href="#"
-                  className="text-pink-500 hover:text-pink-600 font-medium underline decoration-pink-200 hover:decoration-pink-400 transition-colors"
-                >
-                  workshops
-                </Link>
-                {". 🎤"}
+                {" covers in my part time. "}
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -243,7 +182,7 @@ export default function Home() {
                 >
                   Reach out
                 </Link>
-                {" if you want to build something cool together! 🤝"}
+                {" if you want to build something cool together!"}
               </p>
             </div>
           </div>
@@ -254,7 +193,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-lg opacity-50 animate-pulse"></div>
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-pink-100 to-purple-100">
                 <Image
-                  src="/placeholder.svg?height=256&width=256&text=Your+Photo"
+                  src="/IMG_6402.JPG"
                   alt="Profile"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                   fill
@@ -269,7 +208,7 @@ export default function Home() {
         </div>
 
         {/* Fun Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {[
             { icon: <Code className="h-6 w-6" />, number: "50+", label: "Projects Built" },
             { icon: <BookOpen className="h-6 w-6" />, number: "100+", label: "Blog Posts" },
@@ -285,7 +224,7 @@ export default function Home() {
               <div className="text-sm text-gray-600">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div>*/}
       </main>
 
       {/* Footer */}
@@ -295,23 +234,23 @@ export default function Home() {
           <div>
             <div className="flex flex-col space-y-3">
               <Link
-                href="mailto:hi@yourname.com"
+                href="mailto:kritikaparmar07@gmail.com"
                 className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group"
               >
                 <Mail className="h-4 w-4 mr-3 group-hover:animate-bounce" />
-                <span className="group-hover:underline">hi@yourname.com</span>
+                <span className="group-hover:underline">kritikaparmar07@gmail.com</span>
               </Link>
-              <Link href="#" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
+              <Link href="https://github.com/kritikaparmar-programmer" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
                 <Github className="h-4 w-4 mr-3 group-hover:animate-bounce" />
-                <span className="group-hover:underline">yourname</span>
+                <span className="group-hover:underline">kritikaparmar-programmer</span>
               </Link>
-              <Link href="#" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
+              <Link href="https://x.com/KritikaParmar5" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
                 <Twitter className="h-4 w-4 mr-3 group-hover:animate-bounce" />
-                <span className="group-hover:underline">@yourname</span>
+                <span className="group-hover:underline">@KritikaParmar5</span>
               </Link>
-              <Link href="#" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
+              <Link href="https://www.linkedin.com/in/kritika-parmar-10244a193/" className="flex items-center text-gray-600 hover:text-pink-500 transition-colors group">
                 <Linkedin className="h-4 w-4 mr-3 group-hover:animate-bounce" />
-                <span className="group-hover:underline">yourname</span>
+                <span className="group-hover:underline">kritika-parmar</span>
               </Link>
             </div>
           </div>
@@ -338,7 +277,7 @@ export default function Home() {
 
         <div className="mt-8 pt-8 border-t border-pink-100 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
-            {"Made with"} <Heart className="h-4 w-4 text-pink-500 animate-pulse" /> {"and lots of coffee"}
+            {"Made with"} <Heart className="h-4 w-4 text-pink-500 animate-pulse" /> {"and lots of procrastiation"}
           </p>
         </div>
       </footer>
