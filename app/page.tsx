@@ -54,7 +54,7 @@ export default function Home() {
           {/* Mobile Navigation */}
           <div className="md:hidden flex justify-between items-center">
             <Link href="/" className="text-xl font-bold text-gray-800 hover:text-pink-500 transition-colors">
-              Your Name ✨
+              Kritika Parmar ✨
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -120,7 +120,7 @@ export default function Home() {
           <div className="absolute -top-2 -right-8 text-purple-300 animate-pulse">
             <Heart className="h-5 w-5" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 tracking-tight">Your Name</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 tracking-tight">Kritika Parmar</h1>
           <div className="flex items-center justify-center gap-2 text-pink-500 font-medium">
             <Code className="h-4 w-4" />
             <span>Deep Learning Engineer</span>
@@ -193,7 +193,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-lg opacity-50 animate-pulse"></div>
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-pink-100 to-purple-100">
                 <Image
-                  src="/IMG_6402.JPG"
+                  src="/public/IMG_6402.JPG"
                   alt="Profile"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                   fill
