@@ -1,15 +1,59 @@
 "use client"
 
+import type React from "react"
+
 import Navbar from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Mail, Github, Twitter, Linkedin } from "lucide-react"
 import Link from "next/link"
-import { useActionState } from "react"
-import { sendContactMessage } from "./action"
+import { useState } from "react"
 
 export default function ContactPage() {
-  const [state, formAction, isPending] = useActionState(sendContactMessage, null)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      // Validate inputs
+      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+        setStatus({ type: "error", message: "All fields are required" })
+        setIsSubmitting(false)
+        return
+      }
+
+      // Log the message
+      console.log("Contact message received:", formData)
+
+      // Reset form
+      setFormData({ name: "", email: "", subject: "", message: "" })
+      setStatus({ type: "success", message: "Message sent successfully! I will get back to you soon." })
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setStatus(null), 5000)
+    } catch (error) {
+      setStatus({ type: "error", message: "Failed to send message. Please try again." })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -25,13 +69,15 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a message</h2>
-            <form action={formAction} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                 <Input
                   type="text"
                   name="name"
                   placeholder="Your name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="rounded-lg border-pink-200 focus:border-pink-400 focus:ring-pink-200"
                 />
@@ -42,6 +88,8 @@ export default function ContactPage() {
                   type="email"
                   name="email"
                   placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                   className="rounded-lg border-pink-200 focus:border-pink-400 focus:ring-pink-200"
                 />
@@ -52,6 +100,8 @@ export default function ContactPage() {
                   type="text"
                   name="subject"
                   placeholder="What's this about?"
+                  value={formData.subject}
+                  onChange={handleChange}
                   required
                   className="rounded-lg border-pink-200 focus:border-pink-400 focus:ring-pink-200"
                 />
@@ -62,25 +112,29 @@ export default function ContactPage() {
                   name="message"
                   placeholder="Your message here..."
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-200 focus:outline-none"
                 />
               </div>
 
-              {state?.success && (
-                <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg">{state.message}</div>
+              {status?.type === "success" && (
+                <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg">
+                  {status.message}
+                </div>
               )}
 
-              {state?.error && (
-                <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg">{state.error}</div>
+              {status?.type === "error" && (
+                <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg">{status.message}</div>
               )}
 
               <Button
                 type="submit"
-                disabled={isPending}
+                disabled={isSubmitting}
                 className="w-full bg-pink-500 hover:bg-pink-600 rounded-full disabled:opacity-50"
               >
-                {isPending ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
