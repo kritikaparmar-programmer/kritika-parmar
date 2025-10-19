@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink } from "lucide-react"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 export default function ProjectsPage() {
   const projects = [
@@ -97,9 +98,7 @@ export default function ProjectsPage() {
         </div>
       </main>
 
-      <footer className="max-w-3xl mx-auto px-4 py-12 border-t border-gray-200 mt-12">
-        <p className="text-center text-gray-600">Made with care</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

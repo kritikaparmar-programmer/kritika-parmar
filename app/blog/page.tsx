@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock } from "lucide-react"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 export default function BlogPage() {
   const posts = [
@@ -75,9 +76,7 @@ export default function BlogPage() {
         </div>
       </main>
 
-      <footer className="max-w-3xl mx-auto px-4 py-12 border-t border-gray-200 mt-12">
-        <p className="text-center text-gray-600">Made with care</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

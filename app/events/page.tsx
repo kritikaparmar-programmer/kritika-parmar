@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 import { Calendar, MapPin, Users } from "lucide-react"
 
 export default function EventsPage() {
@@ -81,9 +82,7 @@ export default function EventsPage() {
         </div>
       </main>
 
-      <footer className="max-w-3xl mx-auto px-4 py-12 border-t border-gray-200 mt-12">
-        <p className="text-center text-gray-600">Made with care</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
