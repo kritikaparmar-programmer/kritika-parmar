@@ -3,9 +3,9 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
-  title: "Kritika Parmar",
+  title: "Your Name - Deep Learning Engineer & Blogger",
   description:
-    "",
+    "Personal portfolio and blog showcasing deep learning projects and insights with a touch of pink magic ✨",
     generator: 'v0.dev'
 }
 
