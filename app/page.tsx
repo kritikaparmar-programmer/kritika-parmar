@@ -34,38 +34,31 @@ export default function Home() {
           {/* Text Content */}
           <div className="space-y-4 md:space-y-6">
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              Hi there. I'm a deep learning engineer who loves turning complex algorithms into real-world solutions. I'm
-              passionate about building AI systems that make a meaningful impact.
+              Hi there. I'm a Machine Learning Engineer who loves turning complex algorithms into real-world solutions.
+              I'm passionate about building AI systems that make a meaningful impact.
             </p>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              My focus is on computer vision and NLP systems in production. I'm currently exploring creative
-              applications of AI in healthcare and education.
+              My focus is on computer vision and NLP systems in production. I'm currently working at Cars24, and
+              building video inspection product. Previously, I worked on ML at FilterPixel, developed image selecting
+              and editing products, I've also worked at GeeksForGeeks, and Akridata.
             </p>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              {"Previously, I worked on ML infrastructure at "}
-              <Link href="#" className="text-pink-600 hover:text-pink-700 font-medium underline">
-                TechCorp
-              </Link>
-              {", developed recommendation systems at "}
-              <Link href="#" className="text-pink-600 hover:text-pink-700 font-medium underline">
-                StartupXYZ
-              </Link>
-              {", and contributed to open-source ML tools. I also founded a small AI consultancy helping startups."}
+              I graduated from Maharshi Dayanand University studying Computer Science. I enjoy tackling technical
+              challenges and collaborating with amazing teams.
             </p>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              I graduated from university studying Computer Science with a focus on AI. My thesis on neural architecture
-              search became the foundation for several research papers.
+              When I'm not coding, you'll find me on stage talking or hosting MLOps Delhi meetups. I thrive on learning,
+              sharing, and making AI a little less intimidating.
             </p>
 
             <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              {"I enjoy tackling technical challenges and collaborating with amazing teams. "}
+              {"Reach out if you want to build something meaningful together. "}
               <Link href="/contact" className="text-pink-600 hover:text-pink-700 font-medium underline">
-                Reach out
+                Let's connect!
               </Link>
-              {" if you want to build something meaningful together."}
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink } from "lucide-react"
+import { Github } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
@@ -9,51 +9,33 @@ export default function ProjectsPage() {
   const projects = [
     {
       id: 1,
-      title: "Neural Style Transfer",
-      description: "Deep learning model for applying artistic styles to images using PyTorch and VGG-19.",
-      tags: ["PyTorch", "Computer Vision", "Deep Learning"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      title: "RAG Pipeline",
+      description:
+        "Retrieval-Augmented Generation pipeline for building intelligent question-answering systems with semantic search and LLM integration.",
+      tags: ["RAG", "LLM", "Python", "Semantic Search"],
+      github: "https://github.com/kritikaparmar-programmer/RAG-Pipeline",
     },
     {
       id: 2,
-      title: "NLP Sentiment Analyzer",
-      description: "Transformer-based sentiment analysis tool using BERT and Hugging Face transformers.",
-      tags: ["NLP", "BERT", "Python"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      title: "HealthCheck",
+      description: "Health checking and monitoring system for tracking application health and performance metrics.",
+      tags: ["Monitoring", "Python", "Health Check", "DevOps"],
+      github: "https://github.com/kritikaparmar-programmer/HealthCheck",
     },
     {
       id: 3,
-      title: "Medical Image Segmentation",
-      description: "U-Net implementation for medical image segmentation using PyTorch.",
-      tags: ["Computer Vision", "Healthcare", "U-Net"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      title: "Product Name NER",
+      description:
+        "Named Entity Recognition model for extracting and classifying product names from text using NLP techniques.",
+      tags: ["NLP", "NER", "Python", "Machine Learning"],
+      github: "https://github.com/kritikaparmar-programmer/Product_Name_NER",
     },
     {
       id: 4,
-      title: "Time Series Forecasting",
-      description: "LSTM-based model for time series prediction and forecasting.",
-      tags: ["LSTM", "TensorFlow", "Time Series"],
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
-      id: 5,
-      title: "Voice Emotion Recognition",
-      description: "CNN-based system to detect emotions from voice recordings.",
-      tags: ["Audio", "CNN", "Speech Processing"],
-      github: "https://github.com",
-      demo: "https://example.com",
-    },
-    {
-      id: 6,
-      title: "Reinforcement Learning Game AI",
-      description: "AI agent trained using DQN to play games at expert level.",
-      tags: ["Reinforcement Learning", "PyTorch", "Game AI"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      title: "WEblog",
+      description: "A full-featured blogging platform with rich content management and user engagement features.",
+      tags: ["Web", "Blog", "Full-Stack", "JavaScript"],
+      github: "https://github.com/kritikaparmar-programmer/WEblog",
     },
   ]
 
@@ -62,9 +44,6 @@ export default function ProjectsPage() {
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">Projects</h1>
-        <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">My GitHub projects and experiments</p>
-
         <div className="space-y-8 md:space-y-12">
           {projects.map((project) => (
             <div key={project.id} className="pb-8 md:pb-12 border-b border-gray-200 last:border-b-0">
@@ -84,12 +63,6 @@ export default function ProjectsPage() {
                   <Button variant="outline" size="sm" className="gap-2 bg-transparent text-xs md:text-sm">
                     <Github className="h-4 w-4" />
                     GitHub
-                  </Button>
-                </Link>
-                <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                  <Button size="sm" className="gap-2 bg-pink-600 hover:bg-pink-700 text-xs md:text-sm">
-                    <ExternalLink className="h-4 w-4" />
-                    Demo
                   </Button>
                 </Link>
               </div>
