@@ -31,14 +31,14 @@ export default function VideosPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-12">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">My Singing Videos</h1>
-        <p className="text-lg text-gray-700 mb-12">
+      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">My Singing Videos</h1>
+        <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">
           In addition to my work in AI, I'm passionate about music and love sharing my singing videos. Here are some of
           my recent uploads.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {videos.map((video) => (
             <div key={video.id} className="space-y-4">
               {/* YouTube Embed */}
@@ -53,16 +53,16 @@ export default function VideosPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{video.title}</h3>
-                <p className="text-sm text-gray-500 mb-2">{video.date}</p>
-                <p className="text-gray-700">{video.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{video.title}</h3>
+                <p className="text-xs md:text-sm text-gray-500 mb-2">{video.date}</p>
+                <p className="text-gray-700 text-sm md:text-base">{video.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 text-center text-gray-700">
-          <p className="mb-4">
+        <div className="mt-12 md:mt-16 text-center text-gray-700">
+          <p className="text-sm md:text-base">
             More videos on{" "}
             <Link
               href="https://www.youtube.com"
@@ -76,7 +76,6 @@ export default function VideosPage() {
         </div>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   )

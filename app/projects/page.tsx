@@ -61,33 +61,33 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-12">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">Projects</h1>
-        <p className="text-lg text-gray-700 mb-12">My GitHub projects and experiments</p>
+      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">Projects</h1>
+        <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">My GitHub projects and experiments</p>
 
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {projects.map((project) => (
-            <div key={project.id} className="pb-12 border-b border-gray-200 last:border-b-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">{project.description}</p>
+            <div key={project.id} className="pb-8 md:pb-12 border-b border-gray-200 last:border-b-0">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">{project.title}</h3>
+              <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">{project.description}</p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
                 {project.tags.map((tag, i) => (
-                  <Badge key={i} className="bg-pink-100 text-pink-800">
+                  <Badge key={i} className="bg-pink-100 text-pink-800 text-xs md:text-sm">
                     {tag}
                   </Badge>
                 ))}
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-2 md:gap-3">
                 <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent">
+                  <Button variant="outline" size="sm" className="gap-2 bg-transparent text-xs md:text-sm">
                     <Github className="h-4 w-4" />
                     GitHub
                   </Button>
                 </Link>
                 <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                  <Button size="sm" className="gap-2 bg-pink-600 hover:bg-pink-700">
+                  <Button size="sm" className="gap-2 bg-pink-600 hover:bg-pink-700 text-xs md:text-sm">
                     <ExternalLink className="h-4 w-4" />
                     Demo
                   </Button>
