@@ -1,41 +1,12 @@
+"use client"
+
 import Navbar from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Mail, Github, Twitter, Linkedin } from "lucide-react"
 import Link from "next/link"
 import { useActionState } from "react"
-import { revalidatePath } from "next/cache"
-;("use server")
-
-export async function sendContactMessage(formData: FormData) {
-  const name = formData.get("name")
-  const email = formData.get("email")
-  const subject = formData.get("subject")
-  const message = formData.get("message")
-
-  // Validate inputs
-  if (!name || !email || !subject || !message) {
-    return { success: false, error: "All fields are required" }
-  }
-
-  try {
-    // Here you can add your email service integration
-    // For now, we'll just log the data
-    console.log("Contact message received:", { name, email, subject, message })
-
-    // You can integrate with services like:
-    // - SendGrid
-    // - Resend
-    // - Nodemailer
-    // - Firebase
-    // etc.
-
-    revalidatePath("/contact")
-    return { success: true, message: "Message sent successfully! I will get back to you soon." }
-  } catch (error) {
-    return { success: false, error: "Failed to send message. Please try again." }
-  }
-}
+import { sendContactMessage } from "./action"
 
 export default function ContactPage() {
   const [state, formAction, isPending] = useActionState(sendContactMessage, null)
