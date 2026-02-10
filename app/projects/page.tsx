@@ -26,15 +26,15 @@ export default function ProjectsPage() {
       id: 3,
       title: "Product Name NER",
       description:
-        "Named Entity Recognition model for extracting and classifying product names from text using NLP techniques.",
-      tags: ["NLP", "NER", "Python", "Machine Learning"],
+        "Named Entity Recognition system for extracting and identifying product names from text using deep learning.",
+      tags: ["NER", "NLP", "Python", "Deep Learning"],
       github: "https://github.com/kritikaparmar-programmer/Product_Name_NER",
     },
     {
       id: 4,
       title: "WEblog",
-      description: "A full-featured blogging platform with rich content management and user engagement features.",
-      tags: ["Web", "Blog", "Full-Stack", "JavaScript"],
+      description: "A full-featured blogging platform with rich text editing, commenting, and user management.",
+      tags: ["Web Development", "Blog", "Python", "Full Stack"],
       github: "https://github.com/kritikaparmar-programmer/WEblog",
     },
   ]
