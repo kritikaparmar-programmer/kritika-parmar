@@ -39,7 +39,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <main className="max-w-2xl mx-auto px-6 md:px-8 py-8 md:py-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">Blog</h1>
         <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">
           Thoughts on deep learning, technology, and life
@@ -49,7 +49,7 @@ export default function BlogPage() {
           {posts.map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.id} className="block group">
               <div className="pb-8 md:pb-12 border-b border-gray-200 last:border-b-0">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors mb-2">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors mb-2">
                   {post.title}
                 </h2>
 
@@ -64,7 +64,7 @@ export default function BlogPage() {
                     <Clock className="h-4 w-4" />
                     {post.readTime}
                   </span>
-                  <Badge variant="secondary" className="bg-pink-100 text-pink-800 text-xs">
+                  <Badge variant="secondary" className="bg-orange-100 text-orange-800 text-xs">
                     {post.category}
                   </Badge>
                 </div>

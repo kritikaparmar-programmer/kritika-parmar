@@ -26,15 +26,15 @@ export default function ProjectsPage() {
       id: 3,
       title: "Product Name NER",
       description:
-        "Named Entity Recognition model for extracting and classifying product names from text using NLP techniques.",
-      tags: ["NLP", "NER", "Python", "Machine Learning"],
+        "Named Entity Recognition system for extracting and identifying product names from text using deep learning.",
+      tags: ["NER", "NLP", "Python", "Deep Learning"],
       github: "https://github.com/kritikaparmar-programmer/Product_Name_NER",
     },
     {
       id: 4,
       title: "WEblog",
-      description: "A full-featured blogging platform with rich content management and user engagement features.",
-      tags: ["Web", "Blog", "Full-Stack", "JavaScript"],
+      description: "A full-featured blogging platform with rich text editing, commenting, and user management.",
+      tags: ["Web Development", "Blog", "Python", "Full Stack"],
       github: "https://github.com/kritikaparmar-programmer/WEblog",
     },
   ]
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <main className="max-w-2xl mx-auto px-6 md:px-8 py-8 md:py-12">
         <div className="space-y-8 md:space-y-12">
           {projects.map((project) => (
             <div key={project.id} className="pb-8 md:pb-12 border-b border-gray-200 last:border-b-0">
@@ -59,12 +59,12 @@ export default function ProjectsPage() {
               </div>
 
               <div className="flex gap-2 md:gap-3">
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent text-xs md:text-sm">
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </Button>
-                </Link>
+              <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                  <Github className="h-4 w-4 mr-2" />
+                  GitHub
+                </Button>
+              </Link>
               </div>
             </div>
           ))}
