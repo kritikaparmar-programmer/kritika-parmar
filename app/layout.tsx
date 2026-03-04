@@ -1,6 +1,10 @@
 import type React from "react"
+import { Georgia, Inter } from "next/font/google"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+
+const georgia = Georgia({ subsets: ["latin"], variable: "--font-serif", weight: ["400", "700"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata = {
   title: "Kritika Parmar - Machine Learning Engineer",
@@ -14,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${georgia.variable} ${inter.variable}`}>
       <head />
-      <body>
+      <body className="font-serif">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
