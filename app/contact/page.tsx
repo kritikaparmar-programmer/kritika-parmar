@@ -115,7 +115,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:border-pink-400 focus:ring-2 focus:ring-pink-200 focus:outline-none text-sm"
+                  className="w-full px-4 py-2 rounded-lg border border-orange-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-200 focus:outline-none text-sm"
                 />
               </div>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-pink-500 hover:bg-pink-600 rounded-full disabled:opacity-50 text-sm md:text-base"
+                className="w-full bg-orange-500 hover:bg-orange-600 rounded-full disabled:opacity-50 text-sm md:text-base"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>

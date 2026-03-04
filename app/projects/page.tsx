@@ -59,12 +59,12 @@ export default function ProjectsPage() {
               </div>
 
               <div className="flex gap-2 md:gap-3">
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm" className="gap-2 bg-transparent text-xs md:text-sm">
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </Button>
-                </Link>
+              <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                  <Github className="h-4 w-4 mr-2" />
+                  GitHub
+                </Button>
+              </Link>
               </div>
             </div>
           ))}
