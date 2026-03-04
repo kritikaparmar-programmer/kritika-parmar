@@ -6,24 +6,27 @@ export default function VideosPage() {
   const videos = [
     {
       id: 1,
-      title: "Acoustic Cover - Song Title",
+      title: "Video Title 1",
       youtubeId: "dQw4w9WgXcQ",
       date: "June 2024",
-      description: "An acoustic cover of one of my favorite songs.",
     },
     {
       id: 2,
-      title: "Original Song - First Try",
+      title: "Video Title 2",
       youtubeId: "dQw4w9WgXcQ",
       date: "May 2024",
-      description: "My first original song, hope you enjoy it!",
     },
     {
       id: 3,
-      title: "Singing Compilation",
+      title: "Video Title 3",
       youtubeId: "dQw4w9WgXcQ",
       date: "April 2024",
-      description: "A compilation of various songs I've been working on.",
+    },
+    {
+      id: 4,
+      title: "Video Title 4",
+      youtubeId: "dQw4w9WgXcQ",
+      date: "March 2024",
     },
   ]
 
@@ -32,30 +35,24 @@ export default function VideosPage() {
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">My Singing Videos</h1>
-        <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">
-          In addition to my work in AI, I'm passionate about music and love sharing my singing videos. Here are some of
-          my recent uploads.
-        </p>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 md:mb-12">Find me Singing here</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {videos.map((video) => (
-            <div key={video.id} className="space-y-4">
-              {/* YouTube Embed */}
+            <div key={video.id} className="space-y-3">
               <div className="relative w-full pt-[56.25%] bg-gray-100 rounded-lg overflow-hidden">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src={`https://www.youtube.com/embed/${video.youtubeId}`}
                   title={video.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  allowFullScreen={true}
                 />
               </div>
 
               <div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{video.title}</h3>
-                <p className="text-xs md:text-sm text-gray-500 mb-2">{video.date}</p>
-                <p className="text-gray-700 text-sm md:text-base">{video.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">{video.title}</h3>
+                <p className="text-xs md:text-sm text-gray-500">{video.date}</p>
               </div>
             </div>
           ))}
@@ -63,9 +60,9 @@ export default function VideosPage() {
 
         <div className="mt-12 md:mt-16 text-center text-gray-700">
           <p className="text-sm md:text-base">
-            More videos on{" "}
+            More on{" "}
             <Link
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/@kritikaparmarr/videos"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-600 hover:text-pink-700 font-medium"
