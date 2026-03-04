@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
-import CommentsSection from "@/components/comments-section"
 import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const posts: Record<string, any> = {
@@ -97,7 +97,7 @@ As AI becomes more integrated into society, establishing clear ethical guideline
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
         <Navbar />
         <div className="max-w-3xl mx-auto px-4 py-12">
           <p className="text-gray-600">Post not found</p>
@@ -107,33 +107,33 @@ As AI becomes more integrated into society, establishing clear ethical guideline
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="max-w-3xl mx-auto px-4 py-12">
-        <Link href="/blog" className="flex items-center gap-2 text-pink-600 hover:text-pink-700 mb-8 font-medium">
+      <main className="max-w-3xl mx-auto px-4 py-12 md:py-16">
+        <Link href="/blog" className="flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-8 font-medium text-sm">
           <ArrowLeft className="h-4 w-4" />
           Back to Blog
         </Link>
 
         <article>
-          <header className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">{post.title}</h1>
-            <p className="text-gray-500 mb-6">
+          <header className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{post.title}</h1>
+            <p className="text-gray-500 text-sm md:text-base mb-8">
               {post.date} • {post.readTime}
             </p>
-            <div className="relative h-96 rounded-2xl overflow-hidden border-4 border-pink-100 shadow-lg">
+            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden mb-12">
               <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
             </div>
           </header>
 
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-pink-100 mb-12 shadow-lg whitespace-pre-wrap text-gray-700 leading-relaxed">
+          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
             {post.content}
           </div>
         </article>
+      </main>
 
-        <CommentsSection postTitle={post.title} />
-      </div>
+      <Footer />
     </div>
   )
 }
