@@ -9,7 +9,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <main className="max-w-2xl mx-auto px-6 md:px-8 py-8 md:py-12">
         {/* Bio Section */}
         <div className="space-y-8 mb-16">
           {/* Profile Image */}

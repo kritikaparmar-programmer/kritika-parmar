@@ -87,7 +87,7 @@ export default function EventsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-8 md:py-12">
+      <main className="max-w-2xl mx-auto px-6 md:px-8 py-8 md:py-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">Talks given by me</h1>
         <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-12">
           AI/ML/Computer Vision topics discussed at various conferences and communities

@@ -4,10 +4,8 @@ import { Mail, Github, Twitter, Linkedin } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="w-full border-t border-gray-200 bg-white mt-12">
-      <div className="max-w-3xl mx-auto px-4 py-8">
-        <div className="flex items-center justify-between">
-          <p className="text-gray-600 text-sm">Copyright © 2025, Kritika Parmar</p>
-
+      <div className="max-w-2xl mx-auto px-6 md:px-8 py-8">
+        <div className="flex items-center justify-center">
           <div className="flex items-center gap-6">
             <Link
               href="mailto:hi@yourname.com"

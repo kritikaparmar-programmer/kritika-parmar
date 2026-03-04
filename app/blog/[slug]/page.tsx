@@ -110,7 +110,7 @@ As AI becomes more integrated into society, establishing clear ethical guideline
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-12 md:py-16">
+      <main className="max-w-2xl mx-auto px-6 md:px-8 py-12 md:py-16">
         <Link href="/blog" className="flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-8 font-medium text-sm">
           <ArrowLeft className="h-4 w-4" />
           Back to Blog
