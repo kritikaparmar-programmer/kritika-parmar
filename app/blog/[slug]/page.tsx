@@ -1,105 +1,25 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { getPostBySlug, getAllPosts } from "@/lib/blog"
+import Markdown from "react-markdown"
+
+export function generateStaticParams() {
+  const posts = getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const posts: Record<string, any> = {
-    "transformers-guide": {
-      title: "Understanding Transformers: A Visual Guide",
-      date: "June 2, 2025",
-      readTime: "8 min read",
-      image: "/placeholder.svg?height=400&width=800&text=Transformers",
-      content: `
-Transformers have revolutionized the field of artificial intelligence, particularly in natural language processing. In this post, we'll dive deep into understanding how these powerful architectures work and why they've become the foundation of modern AI systems like ChatGPT, BERT, and many others.
-
-Why Transformers Changed Everything
-
-1. Parallelization: Unlike RNNs, transformers can process all tokens simultaneously, making them much faster to train.
-
-2. Long-range dependencies: They can capture relationships between distant words in a sequence.
-
-3. Transfer learning: Pre-trained models like BERT and GPT work amazingly well for various downstream tasks.
-
-The Architecture Breakdown
-
-The transformer consists of an encoder and decoder stack. The encoder takes the input and transforms it into a continuous representation. The decoder then generates the output from this representation.
-
-Key components include:
-- Multi-Head Attention: Allows the model to focus on different parts of the input
-- Feed-Forward Networks: Processes the attended information
-- Residual Connections: Helps with training deep networks
-- Layer Normalization: Stabilizes training
-
-Real-World Applications
-
-Transformers power ChatGPT, GPT models, Google Translate, GitHub Copilot, and DALL-E. They have become the foundation of modern AI systems.
-      `,
-    },
-    "computer-vision": {
-      title: "Computer Vision Magic: From Pixels to Insights",
-      date: "May 20, 2025",
-      readTime: "10 min read",
-      image: "/placeholder.svg?height=400&width=800&text=Computer+Vision",
-      content: `
-Computer vision is a field of artificial intelligence that trains computers to interpret and understand the visual world using digital images and videos.
-
-Fundamental Concepts
-
-1. Image Processing: The process of manipulating images to enhance or extract information.
-
-2. Feature Detection: Identifying important patterns and structures in images.
-
-3. Object Recognition: Classifying and localizing objects within images.
-
-4. Semantic Segmentation: Assigning labels to pixels in an image.
-
-Deep Learning in Computer Vision
-
-Convolutional Neural Networks (CNNs) have become the standard architecture for computer vision tasks. They automatically learn the features needed for detection or classification from raw images.
-
-Applications
-
-Computer vision is used in autonomous vehicles, medical imaging, facial recognition, augmented reality, and robotics. It continues to advance rapidly with new architectures and techniques emerging regularly.
-      `,
-    },
-    "ai-ethics": {
-      title: "Ethics in AI: Building Responsible Systems",
-      date: "May 5, 2025",
-      readTime: "9 min read",
-      image: "/placeholder.svg?height=400&width=800&text=Ethics",
-      content: `
-As AI systems become more powerful and prevalent, ethical considerations have become crucial in their development and deployment.
-
-Key Ethical Concerns
-
-1. Bias: AI systems can perpetuate and amplify existing biases in training data.
-
-2. Transparency: Black-box models can make it difficult to understand how decisions are made.
-
-3. Privacy: AI systems often require large amounts of data, raising privacy concerns.
-
-4. Accountability: Who is responsible when AI systems cause harm?
-
-Building Responsible AI
-
-We must prioritize fairness, transparency, and accountability in AI development. This includes diverse teams, regular audits, and considering the societal impact of our systems.
-
-The Future
-
-As AI becomes more integrated into society, establishing clear ethical guidelines and standards will be essential for ensuring that these powerful technologies are used responsibly and for the benefit of all.
-      `,
-    },
-  }
-
-  const post = posts[params.slug]
+  const post = getPostBySlug(params.slug)
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <div className="min-h-screen bg-white">
         <Navbar />
-        <div className="max-w-3xl mx-auto px-4 py-12">
+        <div className="max-w-2xl mx-auto px-6 md:px-8 py-12">
           <p className="text-gray-600">Post not found</p>
         </div>
       </div>
@@ -122,13 +42,25 @@ As AI becomes more integrated into society, establishing clear ethical guideline
             <p className="text-gray-500 text-sm md:text-base mb-8">
               {post.date} • {post.readTime}
             </p>
-            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden mb-12">
-              <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-            </div>
           </header>
 
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {post.content}
+          <div className="prose prose-lg max-w-none">
+            <Markdown
+              components={{
+                h1: ({ node, ...props }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900" {...props} />,
+                h2: ({ node, ...props }) => <h2 className="text-2xl font-bold mt-6 mb-3 text-gray-900" {...props} />,
+                h3: ({ node, ...props }) => <h3 className="text-xl font-bold mt-5 mb-2 text-gray-900" {...props} />,
+                p: ({ node, ...props }) => <p className="text-gray-700 mb-4 leading-relaxed" {...props} />,
+                li: ({ node, ...props }) => <li className="text-gray-700 mb-2 ml-4" {...props} />,
+                ul: ({ node, ...props }) => <ul className="list-disc mb-4" {...props} />,
+                ol: ({ node, ...props }) => <ol className="list-decimal mb-4" {...props} />,
+                a: ({ node, ...props }) => <a className="text-orange-600 hover:text-orange-700 underline" {...props} />,
+                code: ({ node, ...props }) => <code className="bg-gray-100 px-2 py-1 rounded text-sm" {...props} />,
+                pre: ({ node, ...props }) => <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4" {...props} />,
+              }}
+            >
+              {post.content}
+            </Markdown>
           </div>
         </article>
       </main>
