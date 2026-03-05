@@ -54,12 +54,7 @@ export default function Home() {
               sharing, and making AI a little less intimidating.
             </p>
 
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-              {"Reach out if you want to build something meaningful together. "}
-              <Link href="/contact" className="text-orange-600 hover:text-orange-700 font-medium underline">
-                Let's connect!
-              </Link>
-            </p>
+            
           </div>
         </div>
         <Footer />
