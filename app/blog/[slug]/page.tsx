@@ -5,7 +5,7 @@ import Footer from "@/components/footer"
 import { getPostBySlug, getAllPosts } from "@/lib/blog"
 import Markdown from "react-markdown"
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const posts = getAllPosts()
   return posts.map((post) => ({
     slug: post.slug,
@@ -61,51 +61,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             >
               {post.content}
             </Markdown>
-          </div>
-        </article>
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
-
-  const post = posts[params.slug]
-
-  if (!post) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
-        <Navbar />
-        <div className="max-w-3xl mx-auto px-4 py-12">
-          <p className="text-gray-600">Post not found</p>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-
-      <main className="max-w-2xl mx-auto px-6 md:px-8 py-12 md:py-16">
-        <Link href="/blog" className="flex items-center gap-2 text-orange-600 hover:text-orange-700 mb-8 font-medium text-sm">
-          <ArrowLeft className="h-4 w-4" />
-          Back to Blog
-        </Link>
-
-        <article>
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{post.title}</h1>
-            <p className="text-gray-500 text-sm md:text-base mb-8">
-              {post.date} • {post.readTime}
-            </p>
-            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden mb-12">
-              <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-            </div>
-          </header>
-
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {post.content}
           </div>
         </article>
       </main>
