@@ -6,7 +6,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50">
       <Navbar />
 
       <main className="max-w-2xl mx-auto px-6 md:px-8 py-8 md:py-12">
@@ -15,8 +15,8 @@ export default function Home() {
           {/* Profile Image */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-200 to-amber-200 rounded-full blur-lg opacity-50 animate-pulse"></div>
-              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-orange-100 to-amber-100">
+              <div className="absolute -inset-4 bg-gradient-to-r from-red-200 to-rose-200 rounded-full blur-lg opacity-50 animate-pulse"></div>
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-red-100 to-rose-100">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_2102.png-SEoqnoc5U26eUJmprDVAwqhJ95Hb6y.jpeg"
                   alt="Profile"
@@ -25,7 +25,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-orange-500 text-white p-2 rounded-full shadow-lg">
+              <div className="absolute -bottom-2 -right-2 bg-red-600 text-white p-2 rounded-full shadow-lg">
                 <Cat className="h-4 w-4" />
               </div>
             </div>

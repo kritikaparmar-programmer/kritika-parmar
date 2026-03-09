@@ -47,19 +47,19 @@ vLLM supports various LLM architectures and quantization methods, making it adap
 The core innovation of vLLM is paged attention. Here's a simplified explanation:
 
 **Traditional KV Cache Management:**
-```
+\`\`\`
 Request 1: [Fixed-size memory block] - leaves unused space
 Request 2: [Fixed-size memory block] - leaves unused space
 Request 3: [Fixed-size memory block] - leaves unused space
-```
+\`\`\`
 
 **vLLM's Paged Attention:**
-```
+\`\`\`
 Physical Memory Pages: [Page 1] [Page 2] [Page 3] [Page 4] [Page 5]
 Request 1: Pages 1, 3, 5
 Request 2: Pages 2, 4
 Request 3: Waits for freed pages
-```
+\`\`\`
 
 This approach is analogous to virtual memory in operating systems, where logical pages can be mapped to non-contiguous physical pages.
 
@@ -67,13 +67,13 @@ This approach is analogous to virtual memory in operating systems, where logical
 
 ### Installation
 
-```bash
+\`\`\`bash
 pip install vllm
-```
+\`\`\`
 
 ### Basic Usage
 
-```python
+\`\`\`python
 from vllm import LLM, SamplingParams
 
 # Initialize the LLM
@@ -92,7 +92,7 @@ prompts = [
 outputs = llm.generate(prompts, sampling_params)
 for output in outputs:
     print(output.outputs[0].text)
-```
+\`\`\`
 
 ## Performance Benchmarks
 
