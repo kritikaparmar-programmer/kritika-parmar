@@ -17,11 +17,11 @@ export default function Navbar() {
 
   return (
     <nav className="w-full sticky top-0 z-40">
-      <div className="bg-white/90 backdrop-blur-md border-b border-red-100 shadow-sm">
+      <div className="bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm">
         <div className="max-w-2xl mx-auto px-6 md:px-8 py-4 flex justify-between items-center">
           <Link
             href="/"
-            className="text-lg md:text-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent hover:from-red-700 hover:to-rose-700 transition-all"
+            className="text-lg md:text-xl font-bold bg-gradient-to-r from-amber-700 to-yellow-700 bg-clip-text text-transparent hover:from-amber-800 hover:to-yellow-800 transition-all"
           >
             Kritika Parmar
           </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
-                  pathname === item.href ? "text-red-600" : "text-gray-600 hover:text-red-600"
+                  pathname === item.href ? "text-amber-700" : "text-gray-600 hover:text-amber-700"
                 }`}
               >
                 {item.label}
@@ -42,21 +42,21 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-gray-600 hover:text-red-600" onClick={() => setIsOpen(!isOpen)}>
+          <button className="md:hidden text-gray-600 hover:text-amber-700" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-950 border-t border-red-100">
+          <div className="md:hidden bg-white dark:bg-gray-950 border-t border-amber-100">
             <div className="max-w-2xl mx-auto px-6 md:px-8 py-4 flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`text-sm font-medium transition-colors ${
-                    pathname === item.href ? "text-orange-600" : "text-gray-600 hover:text-orange-600"
+                    pathname === item.href ? "text-amber-700" : "text-gray-600 hover:text-amber-700"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

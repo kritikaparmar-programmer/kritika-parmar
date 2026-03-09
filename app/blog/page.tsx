@@ -22,7 +22,7 @@ export default function BlogPage() {
           {posts.map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.slug} className="block group">
               <div className="pb-8 md:pb-12 border-b border-gray-200 last:border-b-0">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-red-600 transition-colors mb-2">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors mb-2">
                   {post.title}
                 </h2>
 
@@ -37,7 +37,7 @@ export default function BlogPage() {
                     <Clock className="h-4 w-4" />
                     {post.readTime}
                   </span>
-                  <Badge variant="secondary" className="bg-red-100 text-red-800 text-xs">
+                  <Badge variant="secondary" className="bg-amber-100 text-amber-800 text-xs">
                     {post.category}
                   </Badge>
                 </div>

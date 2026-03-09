@@ -31,7 +31,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <Navbar />
 
       <main className="max-w-2xl mx-auto px-6 md:px-8 py-12 md:py-16">
-        <Link href="/blog" className="flex items-center gap-2 text-red-600 hover:text-red-700 mb-8 font-medium text-sm">
+        <Link href="/blog" className="flex items-center gap-2 text-amber-700 hover:text-amber-800 mb-8 font-medium text-sm">
           <ArrowLeft className="h-4 w-4" />
           Back to Blog
         </Link>

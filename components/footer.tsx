@@ -9,18 +9,18 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link
               href="mailto:hi@yourname.com"
-              className="text-gray-600 hover:text-red-600 transition-colors"
+              className="text-gray-600 hover:text-amber-700 transition-colors"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-red-600 transition-colors" aria-label="GitHub">
+            <Link href="#" className="text-gray-600 hover:text-amber-700 transition-colors" aria-label="GitHub">
               <Github className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-red-600 transition-colors" aria-label="Twitter">
+            <Link href="#" className="text-gray-600 hover:text-amber-700 transition-colors" aria-label="Twitter">
               <Twitter className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-red-600 transition-colors" aria-label="LinkedIn">
+            <Link href="#" className="text-gray-600 hover:text-amber-700 transition-colors" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
             </Link>
           </div>
